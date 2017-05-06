@@ -1,0 +1,122 @@
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+
+    <h1>Let's play Rock Paper Scissors</h1>
+
+    <p>You thought playing RPS with people is cool? Lets see you beat the grand master...<p>
+
+    <h3>Press P R or S to start</h3>
+
+    <p>Your pick: <span id="UserChoice"></span></p>
+
+    <p>Computer pick: <span id="ComputerChoice"></span></p>
+
+
+        <p>Wins: <span id="winsCount"></span></p>
+        <p>Loses: <span id="losesCount"></span></p>
+        <p>Ties: <span id="tiesCount"></span></p>
+
+
+
+
+
+    <script>
+
+      var optionsArray = ['Rock', 'Paper', 'Scissors'];
+      var rand = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+      var wins = 0;
+      var loses = 0;
+      var ties = 0;
+
+    document.onkeyup = function(event) {
+     console.log(event);
+
+     if(event.key === "r") {
+
+      UserChoice.textContent = "Rock";
+      var rand = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+      ComputerChoice.textContent = rand;
+
+
+     }
+
+      if (event.key === "p") {
+
+      UserChoice.textContent = "Paper";
+      var rand = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+      ComputerChoice.textContent = rand;
+
+
+     }
+
+
+     if (event.key === "s") {
+
+            UserChoice.textContent = "Scissors";
+            var rand = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+            ComputerChoice.textContent = rand;
+
+
+
+     }
+
+
+     if (event.key === "r" && rand === "Rock") {
+      ties++
+     }
+
+      if (event.key === "p" && rand === "Paper") {
+      ties++
+
+     }
+
+           if (event.key === "s" && rand === "Scissors") {
+      ties++
+
+     }
+
+     if (event.key === "p" && rand === "Rock") {
+      wins++
+     }
+
+      if (event.key === "s" && rand === "Paper") {
+      wins++
+
+     }
+
+           if (event.key === "r" && rand === "Scissors") {
+      wins++
+
+     }
+
+     if (event.key === "s" && rand === "Rock") {
+      loses++
+     }
+
+      if (event.key === "r" && rand === "Paper") {
+      loses++
+
+     }
+
+           if (event.key === "p" && rand === "Scissors") {
+      loses++
+
+     }
+
+
+winsCount.textContent = wins;
+losesCount.textContent = loses;
+tiesCount.textContent = ties;
+
+
+
+}
+
+    </script>
+    
+  </body>
+</html>
